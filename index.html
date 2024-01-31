@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>W3.CSS Template</title>
+    <title>Lachezar Bozhkov Curriculum Vitae</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -14,13 +14,14 @@
             font-size: xx-large;
         }
 
-        h2 {
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-size: medium;
         }
 
-        h3 {
-            font-size: medium;
-        }
 
         body {
             font-size: smaller;
@@ -42,8 +43,8 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: 1fr 9fr;
-            background-color: #2196F3;
+            grid-template-columns: 2fr 8fr;
+            background-color: lightblue;
         }
 
         .grid-container>div {
@@ -51,23 +52,63 @@
             border: 1px solid rgba(0, 0, 0, 0.8);
             padding: 10px;
             text-align: left;
+            page-break-inside: auto;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: baseline;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .flex-container :first-child {
+            flex-shrink: 0;
+        }
+
+        .flex-container :second-child {
+            flex-shrink: 1;
+        }
+
+        .flex-container :last-child {
+            margin-left: auto;
+            flex-shrink: 0;
+        }
+
+        .w3-ul li {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .w3-ul ul li {
+            padding: 4px 8px;
+            border-bottom: none;
+        }
+
+        @media print {
+
+            .w3-card-4,
+            .w3-hover-shadow:hover {
+                box-shadow: none;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Page Container -->
     <div class="w3-content w3-margin" style="max-width:1400px;">
         <div class="w3-container w3-margin">
             <h1>Lachezar Bozhkov</h1>
             <h2 class="w3-opacity">Doctor of Philosophy, Software Engineer</h2>
-            <span class="w3-margin-right" onclick="this.innerHTML=innerHTML.replace('CLICK', '667')"> <i
-                    class="fa fa-phone fa-fw w3-text-teal"></i> (+359) 888 CLICK
-                553 </span>
-            <span onclick="this.innerHTML=innerHTML.replace('_CLICK_', 'ezar.boz')"> <i
-                    class="fa fa-envelope fa-fw w3-text-teal"></i>
-                lach_CLICK_hkov@gmail.com</span>
-            <!-- <h3>Date of Birth: 03 February 1987</h3> -->
+            <span class="w3-margin-right" onclick="this.innerHTML=innerHTML.replace(' CLICK ', '67 553')"> <i
+                    class="fa fa-phone w3-text-teal"></i> (+359) 888 6 CLICK </span>
+            <span class="w3-margin-right" onclick="this.innerHTML=innerHTML.replace('_CLICK_', 'zar.boz')"> <i
+                    class="fa fa-envelope w3-text-teal"></i>
+                lache_CLICK_hkov@gmail.com</span>
+            <span>
+                <a href="https://lachezarbozhkov.github.io/" style="text-decoration: none;"> <i
+                        class="fa fa-home w3-text-teal"></i>
+                    https://lachezarbozhkov.github.io/</a>
+            </span>
         </div>
 
         <div class="w3-card-4 w3-margin">
@@ -85,7 +126,7 @@
                 </p>
                 <p>
                     Research, development, and leadership experience in practice acquired during different roles in
-                    industry and PhD
+                    industry and Ph.D.
                     education. Hands-on experience with a variety of technologies and paradigms. Communicative,
                     responsible and active
                     person with good hard and soft skills and a positive attitude. Fast learner with strong analytic,
@@ -95,8 +136,343 @@
             </div>
         </div>
 
+        <div class="w3-card-4 w3-margin" id="experience">
+            <header class="w3-container w3-signal-orange">
+                <h2 style="text-transform: uppercase"> <i class="fa fa-suitcase w3-margin-right" aria-hidden="true"></i>
+                    Experience </h2>
+            </header>
+            <div class="w3-container">
+                <ul class="w3-ul">
+                    <li>
+                        <header class="flex-container">
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>6/2016 - <span
+                                    class="w3-tag w3-teal w3-round">Current</span></h6>
+                            <h5 class="w3-opacity">Dext | Head of Machine Learning</h5>
+                            <a href="https://dext.com" target="_blank" class="w3-right" style="text-decoration: none;">
+                                dext.com</a>
+                        </header>
+                        <ul>
+                            <li>
+                                Dext is a fast-growing fintech company that automates accounting and tax compliance for
+                                small businesses. When I joined in 2006 the company processed 200k documents for the
+                                year. Now (2024) we process 1.5M documents per day.
+                            </li>
+                            <li>
+                                Leading the machine learning efforts including research, continuous improvements,
+                                integration, deployment and monitoring of the ML models.
+                                Lead the hiring process for the ML team. Build and maintain the ML team culture.
+                            </li>
+                            <li>
+                                The team delivered unmatched in the industry expertise in ML-powered data extraction.
+                            </li>
+                            <li>
+                                <b>Technologies:</b> Machine Learning, Python, Pytorch, Scikit-learn, Tensorflow, AWS.
+                            </li>
+                        </ul>
+                    </li>
 
-        <div class="w3-card-4 w3-margin">
+                    <li>
+                        <header class="flex-container">
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>10/2015 -
+                                5/2016
+                            </h6>
+                            <h5 class="w3-opacity">Hyperscience | Machine Learning Engineer</h5>
+                            <a href="https://www.hyperscience.com/" target="_blank" class="w3-right"
+                                style="text-decoration: none;">
+                                hyperscience.com</a>
+                        </header>
+                        <ul>
+                            <li>
+                                Worked on building several different solutions, e.g. Explicit Content Detector for a big
+                                online platform for sharing
+                                digital content. Internal Security Application for Salesforce, which task was to detect
+                                anomalies in employees access
+                                rights and prevent illegal access attempts. Worked on an "Automatic DataScientist"
+                                product.
+                                Also, I took part in the
+                                interview process for hiring new members.
+                            </li>
+                            <li>
+                                <b>Technologies:</b> Machine Learning, Python, Chainer, Tensorflow, Scikit-learn,
+                                HyperOpt,
+                                MongoDB, Elastic Search, AWS.
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <header class="flex-container">
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>03/2014 -
+                                07/2017
+                            </h6>
+                            <h5 class="w3-opacity">University of Aveiro, TU-Sofia | Ph.D. Student</h5>
+                            <div></div>
+                        </header>
+                        <ul>
+                            <li>
+                                Research Assistant Internship - Univerisity of Aveiro (Erasmus scholarship) - 4/2015 -
+                                10/2015.
+                            </li>
+                            <li>
+                                Worked on Brain-Computer Interface using EEG and Machine Learning at the Department of
+                                Electronics Telecommunications
+                                and Informatics at the University of Aveiro under the supervision of prof. Petia
+                                Georgieva. During the time we developed
+                                few novel approaches, published and presented several papers at international
+                                conferences and journals. I was teaching assistant for the
+                                ML course at the UA.
+                            </li>
+                            <li>
+                                <b>Advisors:</b> prof. Petia Georgieva, University of Aveiro; prof. Rumen Trifonov,
+                                TU-Sofia
+                            </li>
+                            <li>
+                                <b>Technologies:</b> Machine Learning, Matlab, C#, .NET, EEGLab, Python, Signal
+                                Processing
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <header class="flex-container">
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>10/2012 -
+                                4/2015
+                            </h6>
+                            <h5 class="w3-opacity">S-Versiherung | Software Engineer</h5>
+                            <a href="https://www.s-versicherung.at/" target="_blank" class="w3-right"
+                                style="text-decoration: none;">
+                                s-versicherung.at</a>
+                        </header>
+                        <ul>
+                            <li>
+                                Senior C# developer at s-Versicherung in Vienna, part of Vienna
+                                Insurance Group. My main
+                                responsibility was designing and building a big data warehouse system and the
+                                accompanying ETL process.
+                            </li>
+                            <li>
+                                <b>Technologies:</b> C#, .NET, MVC4, ASP.NET, WCF, MS SQL Server 2008R2, SQL Server
+                                2012, OLAP, OLTP, Java Script, JQuery,
+                                Custom controls
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <header class="flex-container">
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>10/2012 -
+                                4/2015
+                            </h6>
+                            <h5 class="w3-opacity">Easy Asset Management | Software Development Manager
+                            </h5>
+                            <a href="https://www.easycredit.bg/" target="_blank" style="text-decoration: none;">
+                                easycredit.bg</a>
+                        </header>
+                        <ul>
+                            <li>
+                                Started as a C# developer. We built an internal ERP system for the needs of the fin-tech
+                                company. In 6 months I was
+                                promoted to Software Development Team Manager. I led the team in expanding the internal
+                                software toolkit for the company. We successfully delivered software exceeding the
+                                company's requirements and expectations.
+                            </li>
+                            <li>Manage, organize, assign tasks and monitor their implementation within the department.
+                                Develops application software by
+                                the technical specifications on time and in budget. Collaborate with software users to
+                                find user stories and analyze requirements.
+                            </li>
+                            <li>
+                                <b>Technologies:</b> C#, .NET, MVC4, ASP.NET, WCF, MS SQL Server 2008R2, SQL Server
+                                2012, OLAP, OLTP, Java Script, JQuery, Custom controls
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <header class="flex-container">
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2000 -
+                                2009
+                            </h6>
+                            <h5 class="w3-opacity">Projects, Internships and Positions
+                            </h5>
+                            <div></div>
+                        </header>
+                        <ul>
+                            <li>
+                                2017-2019 | Faculty of Mathematics and Informatics, Sofia University | Lecturer |
+                                Applied Machine Learning with Python | https://github.com/fmi/machine-learning-lectures
+                            </li>
+                            <li>
+                                2010 |
+                                QuickStart Global | .NET Developer |
+                                Refactoring and rewriting the site www.findababysitter.com using C#, ASP
+                                MVC2, .NET, MS SQL Server, MySQL, HTML, CSS
+                            </li>
+                            <li>2006 - 2008 | National Academy for Software Development (NASD) | Trainer for various
+                                .NET courses | Software Developer on various projects
+
+                                | Co-author
+                                Introduction to programming with Java - Student book for programming with Java in
+                                Bulgarian. ISBN 978-954-400-055-4.
+                            </li>
+                            <li>
+                                2009 | Erasmus students mobility program at Beja University, Portugal | TU Sofia - Final
+                                Project
+                                Description: Client Orders and Protocols Management System, which was developed for
+                                Krakrasoft
+                                Technologies: UML, C#, .NET, MS Project, Visual Paradigm
+                            </li>
+                            <li>
+                                2009 | Erasmus Intership - Coca-Cola Bottling Co, Dublin, Ireland |
+                                Network Administrator and Support internship
+                            </li>
+                            <li>
+                                2000 - 2009 | Krakrasoft | An apprentice, summer internships
+                                | From DOS commands, through Windows installations, drivers, troubleshooting, network
+                                configurations to software development
+                            </li>
+                            <li>
+                                Speaker at various conferences, meetups and events.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin" id="publications" style="page-break-inside:avoid;">
+            <header class="w3-container w3-signal-brown flex-container" style="gap:0px;">
+                <h2 style="text-transform: uppercase;"> <i class="fa fa-file-text-o w3-margin-right"
+                        aria-hidden="true"></i>
+                    Publications </h2>
+                <a href="https://scholar.google.com/citations?user=LmKnywYAAAAJ&hl=en" style="text-decoration: none;"
+                    target="_blank"
+                    class="w3-right w3-margin-right">https://scholar.google.com/citations?user=LmKnywYAAAAJ&hl=en</a>
+            </header>
+            <div class="w3-container">
+                <ul class="w3-ul">
+                    <li>
+                        Bozhkov Lachezar, Overview of Deep Learning Architectures for Classifying Brain Signals, KSI
+                        Transactions on Кnowledge
+                        society, ISSN 1313-4787, p59-66, Vol. IX, Number 1, March 2017
+                    </li>
+                    <li>
+                        Lachezar Bozhkov, Petia Koprinkova-Hristova and Petia Georgieva, Reservoir Computing for Emotion
+                        Valence
+                        Discrimination
+                        from EEG signals, Neurocomputing, http://dx.doi.org/10.1016/j.neucom.2016.03.108 (IF 2.392),
+                        March
+                        2017
+                    </li>
+                    <li> Lachezar Bozhkov, Petia Koprinkova-Hristova, Petia Georgieva, Learning to decode human emotions
+                        with
+                        Echo State Networks, Neural Networks Journal, Volume 78, June 2016, Pages 112-119, ISSN
+                        0893-6080,
+                        http://dx.doi.org/10.1016/j.neunet.2015.07.005
+                        (http://www.sciencedirect.com/science/article/pii/S0893608015001422) (IF 3.216)</li>
+                    <li>
+                        L. Bozhkov, P. Georgieva, I. Santos, A. Pereira, C. Silva (2015), EEG-based subject independent
+                        affective computing
+                        models. Procedia Computer Science, Elsevier, pp. 375-382, DOI: 10.1016/j.procs.2015.07.314
+                    </li>
+                    <li>
+                        Lachezar Bozhkov, Petia Georgieva, Brain Neural Data Analysis with Feature Space Defined by
+                        Descriptive
+                        Statistics,
+                        Pattern Recognition and Image Analysis, Volume 9117 of the series Lecture Notes in Computer
+                        Science
+                        pp
+                        415-422,
+                        http://dx.doi.org/10.1007/978-3-319-19390-8_47 (2015)
+                    </li>
+                    <li>
+                        Koprinkova-Hristova, P. and Bozhkov, L. and Georgieva, P. , Echo State Networks for Feature
+                        Selection in
+                        Affective
+                        Computing, Advances in Practical Applications of Agents, Multi-Agent Systems, and
+                        Sustainability:
+                        The
+                        PAAMS Collection,
+                        p.131-141, http://dx.doi.org/10.1007/978-3-319-18944-4_11 (2015)
+                    </li>
+                    <li>
+                        Lachezar Bozhkov, Petia Georgieva, "Classification models of emotional biosignals evoked while
+                        viewing
+                        affective
+                        pictures", 2014 International Conference on Simulation and Modeling Methodologies,
+                        Technologies and
+                        Applications (SIMULTECH) 2014, pp. 601-606.
+                    </li>
+                    <li>
+                        Bozhkov L., P. Georgieva, R. Trifonov, Brain Neural Data Analysis Using Machine Learning Feature
+                        Selection and
+                        Classification Methods, Engineering Applications of Neural Networks, Communications in Computer
+                        and
+                        Information Science
+                        vol 459, pp.123-132, 2014, http://dx.doi.org/10.1007/978-3-319-11071-4_12
+                    </li>
+                    <li>
+                        Nakov S. et al., Student book for programming with Java in Bulgarian. ISBN 978-954-400-055-4,
+                        Chapter:
+                        Operators and
+                        expressions. 2008 http://www.introprogramming.info/intro-java-book/
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin" id="education" style="page-break-inside:avoid;">
+            <header class="w3-container w3-signal-violet">
+                <h2 style="text-transform: uppercase"> <i class="fa fa-graduation-cap w3-margin-right"
+                        aria-hidden="true"></i>
+                    Education - Technical University of Sofia </h2>
+            </header>
+            <div class="w3-container">
+                <ul class="w3-ul">
+                    <li>
+                        <header class="flex-container">
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2017
+                            </h6>
+                            <h5 class="w3-opacity">PhD in Machine Learning, Univerisity of Aveiro</h5>
+                            <div></div>
+                        </header>
+                        <ul>
+                            <li>
+                                <b>Thesis:</b> Application of Machine Learning for non-invasive brain-computer
+                                interface.
+                            </li>
+                            <li>
+                                <b>Advisor:</b>
+                                Prof. Petia Georgieva, University
+                                of Aveiro, Portugal.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <header class="flex-container">
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2009 - 2013
+                            </h6>
+                            <h5 class="w3-opacity">M. Sc. in Computer Science with honors (in English Language)</h5>
+                            <div></div>
+                        </header>
+                    </li>
+
+                    <li>
+                        <header class="flex-container">
+                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2005 - 2009
+                            </h6>
+                            <h5 class="w3-opacity">B. Sc. in Industrial Engineering with honors (in English Language)
+                            </h5>
+                            <div></div>
+                        </header>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-card-4 w3-margin" id="skills" style="page-break-inside:avoid;">
             <header class="w3-container w3-signal-green">
                 <h2 style="text-transform: uppercase;">
                     <i class="fa fa-asterisk fa-fw w3-margin-right"></i> Skills
@@ -104,61 +480,56 @@
             </header>
             <div class="grid-container">
                 <div>Languages</div>
-                <div>Python, C#, Matlab, C/C++, Java, SQL, T-SQL, PL/SQL, JavaScript, HTML, CSS, UML</div>
-
-
-
+                <div>Python, C#, C/C++, Java, SQL, Matlab, R, JavaScript, HTML, CSS, UML</div>
                 <div>Operating Systems</div>
                 <div>OS X, Ubuntu, Windows</div>
-                <div>Software Technologies</div>
-                <div>Machine Learning - scikit learn, Pandas, numpy, matplotlib, seaborn, tensorflow, keras, PyTorch.
-                    Microsoft .NET Framework and related technologies – C#, ADO.NET, Windows Forms, ASP.NET, MVC, XML
-                    Web
-                    services, WCF,
-                    AJAX, LINQ, Entity Framework.</div>
-                <div>Database access</div>
-                <div>SQL, T-SQL, ADO.NET, stored procedures, LINQ, Entity Framework.</div>
-                <div>Web sites and client-side scripting</div>
-                <div>HTML 5, CSS 3, JavaScript, JQuery.</div>
+                <div>Cloud Providers</div>
+                <div>AWS, GCP, Azure, OCI</div>
+                <div>Machine Learning</div>
+                <div>PyTorch, HuggingFace, LightningAI, PEFT, scikit-learn, pandas, numpy, matplotlib, seaborn, plotly,
+                    Tensorflow, keras, DVC, Open AI API </div>
+                <div>Neural Networks</div>
+                <div>FFN, CNN, RNN, Residual, Reservoir, Autoencoders, Attention, Transformers, LLM, GAN, Stable
+                    Diffusion
+                </div>
                 <div>Web programming</div>
-                <div>Flask, ASP.NET, MVC, Forms, SPA</div>
+                <div>Flask, ASP.NET, MVC, Forms, SPA, HTML 5, CSS 3, JavaScript, JQuery</div>
                 <div>Internet protocols </div>
-                <div>TCP/IP, UDP, HTTP, SMTP, POP3, FTP, WCF, JSON, REST, Socket programming,
-                    WebSockets, JSON</div>
-                Distributed applications – Web services (SOAP, WSDL), WCF.
-                XML programming – DOM, SAX, DTD, XSchema, XPath, XSL/XSLT.
-                Application Servers – MS Internet Information Server (IIS), Azure Cloud.
-                Object-oriented programming and modelling, UML.
-                Distributed systems and multi-tier architectures, Client-server technologies.
-                Multithreading and thread synchronisation, asynchronous execution, PLINQ, Parallel technologies, Web
-                programming,
-                Networking.
-                Database access and database design (E/R diagrams).
-                Operating systems – OS X, Windows, DOS, Linux.
-                Software engineering, Team working, Product Management.
-                Configuration management and source control – Git, Microsoft Visual SourceSafe, Subversion, CVS, and
-                SVN.
-                High-quality programming code
-                Windows network administration and maintenance
-                Data structures, Algorithms, Design Patterns, Service Oriented Architectures, PaaS (Platform as a
-                Service), Clean code.
-                Development Tools
-                Vusual Studio Code, Vim
-                .NET related – Microsoft Visual Studio (.net, 2008/2010/2012/2013/2015)
-                Database design – SQL Server Management Studio, CASE Studio, Microsoft Visio
-                Database programming – SQL Server Management Studio, SQL Server Query Analyzer, SQL Server Profiler,
-                Activity Monitor
-                UML Design - Visual Paradigm, MS Visio
-                Other IDEs: Matlab, IPython notebook, Arduino IDE, notepad++.
-                Databases
-                Microsoft SQL Server, PostgreSQL, MySQL, MongoDB, Elastic Search (basic knowledge).
-
+                <div>TCP/IP, UDP, HTTP, SMTP, POP3, FTP, WCF, JSON, REST API, Socket programming, WebSockets, JSON
+                </div>
+                <div>Database Technologies</div>
+                <div>
+                    SQL, MS SQL Server, PostgreSQL, MySQL, MongoDB, Elastic Search, ORM, SQLAlchemy, Entity Framework,
+                    Database access and design
+                    (E/R diagrams), Normalization, Joins, Aggregates, Transactions, Locks, Stored procedures, Query
+                    Analyzer, SQL Server
+                    Profiler, OLTP, OLAP, ETL, Data warehouse, Data lake</div>
+                <div>Microsoft Technologies</div>
+                <div>
+                    .NET Framework, C#, ADO.NET, Windows Forms, ASP.NET, MVC,
+                    XML Web services, WCF, AJAX, LINQ, Entity Framework, T-SQL</div>
+                <div>Distributed applications </div>
+                <div>REST API, FAST API, Web services (SOAP, WSDL), WCF</div>
+                <div>XML programming </div>
+                <div>DOM, SAX, DTD, XSchema, XPath, XSL/XSLT</div>
+                <div>Paradigms</div>
+                <div>Object-oriented, functional and procedural programming and modelling, UML. Multithreading and
+                    thread synchronization, asynchronous execution,
+                    Parallel technologies, Web programming,
+                    Networking. Distributed systems and multi-tier architectures, Client-server technologies. Software
+                    engineering, Team working, Project Management. High-quality
+                    programming code. Agile methodologies, Scrum, Kanban, XP, TDD, BDD, DDD, CI/CD, DevOps, GitOps,
+                    MLOps.
+                    Windows network administration and maintenance. Service Oriented Architectures, PaaS (Platform as a
+                    Service). Data structures, Algorithms, Clean code, Design patterns.</div>
+                <div>Development Tools</div>
+                <div>Visual Studio Code, Vim, Copilot, Google Colab, Jupyter Lab/Notebook, Streamlit, Git, Microsoft
+                    Visual SourceSafe, Subversion, CVS,
+                    SVN
+                </div>
             </div>
         </div>
     </div>
-
-
-
 </body>
 
 </html>
