@@ -1,536 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Lachezar Bozhkov | Technology Leader & Head of AI</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-signal.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Lachezar Bozhkov | Head of AI · PhD</title>
+    <meta name="description" content="Lachezar Bozhkov. Head of AI and hands-on technical lead. Built and scaled Dext's document AI from 200K documents a year to 1.5M a day and led its move to production LLM systems. PhD in machine learning.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Lachezar Bozhkov",
+      "jobTitle": "Head of AI",
+      "worksFor": {"@type": "Organization", "name": "Dext"},
+      "address": {"@type": "PostalAddress", "addressLocality": "Sofia", "addressCountry": "BG"},
+      "url": "https://lachezarbozhkov.github.io/",
+      "sameAs": [
+        "https://www.linkedin.com/in/lachezarbozhkov/",
+        "https://github.com/lachezarbozhkov",
+        "https://scholar.google.com/citations?user=LmKnywYAAAAJ"
+      ],
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "University of Aveiro"},
+        {"@type": "CollegeOrUniversity", "name": "Technical University of Sofia"}
+      ]
+    }
+    </script>
     <style>
-        h1 {
-            font-size: xx-large;
+        :root {
+            --bg: #f6f7f9;
+            --surface: #ffffff;
+            --text: #1a1d23;
+            --muted: #5c6370;
+            --line: #e3e6ea;
+            --accent: #0f6fff;
+            --accent-soft: #e8f0ff;
+            --tile: #f0f3f7;
+            color-scheme: light dark;
         }
-
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-size: medium;
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0f1115;
+                --surface: #171a21;
+                --text: #e8eaee;
+                --muted: #9aa3b2;
+                --line: #2a2f3a;
+                --accent: #6ea4ff;
+                --accent-soft: #1c2a44;
+                --tile: #1e222b;
+            }
         }
-
-
+        * { box-sizing: border-box; }
+        html { font-size: 16px; }
         body {
-            font-size: smaller;
-        }
-
-        html,
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: "Roboto", sans-serif;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.5;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .page {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 32px 16px 56px;
+        }
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 36px 40px;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: 2fr 8fr;
-            background-color: #eee;
+        /* Header */
+        .hero h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
         }
-
-        .grid-container>div {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            text-align: left;
-            page-break-inside: auto;
+        .hero .role {
+            margin: 6px 0 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
         }
-
-        .flex-container {
+        .hero .tagline {
+            margin: 12px 0 0;
+            font-size: 1.02rem;
+            color: var(--text);
+            max-width: 68ch;
+        }
+        .meta {
             display: flex;
             flex-wrap: wrap;
-            justify-content: baseline;
-            column-gap: 20px;
-            align-items: center;
+            gap: 6px 18px;
+            margin: 18px 0 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0.9rem;
+            color: var(--muted);
         }
-
-        .flex-container :first-child {
-            flex-shrink: 0;
+        .meta li { white-space: nowrap; }
+        .meta button {
+            font: inherit;
+            color: var(--accent);
+            background: none;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
         }
+        .meta button:hover { text-decoration: underline; }
 
-        .flex-container :second-child {
-            flex-shrink: 1;
+        /* Sections */
+        section { margin-top: 34px; }
+        section > h2 {
+            margin: 0 0 14px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--line);
         }
+        .summary p { margin: 0; max-width: 78ch; }
 
-        .flex-container :last-child {
+
+        /* Entries */
+        .entry { margin-bottom: 26px; break-inside: avoid; }
+        .entry:last-child { margin-bottom: 0; }
+        .entry-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 4px 16px;
+        }
+        .entry-head h3 {
+            margin: 0;
+            flex: 1 1 60%;
+            min-width: 0;
+            font-size: 1.02rem;
+            font-weight: 600;
+        }
+        .entry-head h3 span {
+            font-weight: 500;
+            color: var(--muted);
+        }
+        .entry-head time {
+            flex: 0 0 auto;
             margin-left: auto;
-            flex-shrink: 0;
+            font-size: 0.88rem;
+            color: var(--muted);
+            white-space: nowrap;
         }
-
-        .w3-ul li {
-            border-bottom: 1px solid #ddd;
+        .entry .lead { margin: 8px 0 0; }
+        .entry ul {
+            margin: 8px 0 0;
+            padding-left: 18px;
         }
-
-        .w3-ul ul li {
-            padding: 4px 8px;
-            border-bottom: none;
+        .entry li { margin: 4px 0; }
+        .entry li::marker { color: var(--accent); }
+        .entry .stack {
+            margin-top: 8px;
+            font-size: 0.88rem;
+            color: var(--muted);
         }
+        .compact .entry { margin-bottom: 12px; }
+        .compact .entry p { margin: 4px 0 0; }
 
-        .skills-grid {
+        /* Publications */
+        .pubs { margin: 0; padding-left: 18px; }
+        .pubs li { margin: 6px 0; }
+        .pubs .cites { color: var(--muted); font-size: 0.88rem; }
+        .pubs-note { margin: 10px 0 0; color: var(--muted); font-size: 0.92rem; }
+        .section-link { font-weight: 500; text-transform: none; letter-spacing: 0; float: right; }
+
+        /* Capabilities and stack */
+        .caps {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            /* padding-top: 10px; */
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 24px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .caps li { padding-left: 14px; position: relative; }
+        .caps li::before {
+            content: "";
+            position: absolute;
+            left: 0; top: 0.6em;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        .caps strong { font-weight: 600; }
+        .stack-grid {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            gap: 8px 20px;
+            margin: 0;
+        }
+        .stack-grid dt { font-weight: 600; }
+        .stack-grid dd { margin: 0; color: var(--text); }
+        .stack-grid dd.muted { color: var(--muted); }
+
+        footer {
+            margin-top: 34px;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+            font-size: 0.82rem;
+            color: var(--muted);
         }
 
-        .skills-grid ul {
-            list-style-type: none;
-            padding: 5px;
-
-        }
-
-        .skills-grid ul li {
-            background-color: #eee;
-            padding: 5px 10px;
-            margin: 10px;
-            border-radius: 5px;
-
+        @media (max-width: 720px) {
+            .card { padding: 26px 20px; border-radius: 10px; }
+            .page { padding: 16px 16px 40px; }
+            .hero h1 { font-size: 1.7rem; }
+            .caps { grid-template-columns: 1fr; }
+            .entry-head time { margin-left: 0; width: 100%; }
+            .stack-grid { grid-template-columns: 1fr; gap: 2px 0; }
+            .stack-grid dd { margin-bottom: 8px; }
         }
 
         @media print {
-
-            .w3-card-2,
-            .w3-hover-shadow:hover {
-                box-shadow: none;
-            }
+            @page { size: A4; margin: 11mm 13mm; }
+            html { font-size: 9.6pt; }
+            body { background: #fff; color: #000; line-height: 1.38; }
+            .entry { break-inside: auto; }
+            .compact .entry, .pubs li { break-inside: avoid; }
+            section > h2, .entry-head, .entry .lead { break-after: avoid; }
+            .entry li { break-inside: avoid; }
+            .hero .tagline { margin-top: 6px; }
+            .meta { margin-top: 10px; }
+            .page { max-width: none; padding: 0; }
+            .card { border: 0; padding: 0; border-radius: 0; }
+            a { color: #000; }
+            .hero .role, .entry li::marker, .caps li::before { color: #000; background: #000; }
+            section { margin-top: 14px; }
+            section > h2 { margin-bottom: 8px; padding-bottom: 5px; }
+            .entry { margin-bottom: 10px; }
+            .entry li { margin: 2px 0; }
+            .caps { gap: 6px 20px; }
+            .stack-grid { gap: 4px 16px; }
+            footer { margin-top: 14px; }
+            .meta button { display: none; }
+            #email-print { display: inline; }
+            .no-print { display: none; }
+            #publications, #education { break-inside: avoid; }
         }
+        #email-print { display: none; }
     </style>
 </head>
 
 <body>
-    <div class="w3-content w3-margin" style="max-width:1400px;">
-        <div class="w3-container w3-margin">
-            <h1>Lachezar Bozhkov</h1>
-            <h2 class="w3-opacity">Ph.D., Technology Leader, Head of Machine Learning</h2>
-            <span class="w3-margin-right" onclick="this.innerHTML=innerHTML.replace(' CLICK ', '67 553')"> <i
-                    class="fa fa-phone w3-text-teal"></i> (+359) 888 6 CLICK </span>
-            <span class="w3-margin-right" onclick="this.innerHTML=innerHTML.replace('_CLICK_', 'zar.boz')"> <i
-                    class="fa fa-envelope w3-text-teal"></i> lache_CLICK_hkov@gmail.com</span>
-            <span>
-                <a href="https://lachezarbozhkov.github.io/" style="text-decoration: none;"> <i
-                        class="fa fa-home w3-text-teal"></i> https://lachezarbozhkov.github.io/
-                </a>
-            </span>
-        </div>
+<div class="page">
+<main class="card">
 
-        <div class="w3-card-2 w3-margin">
-            <header class="w3-container w3-signal-blue">
-                <h2 style="text-transform: uppercase;"> <i class="fa fa-id-card-o w3-margin-right"
-                        aria-hidden="true"></i>
-                    Summary</h2>
-            </header>
-            <div class="w3-container">
-                <p>Proven leader in AI and Software Engineering with extensive experience driving innovation and
-                    delivering scalable,
-                    high-impact solutions in fast-paced environments. Expert in developing and deploying
-                    state-of-the-art AI/ML systems,
-                    fostering cross-functional collaboration, and mentoring teams for peak performance. Holds a Ph.D. in
-                    Machine Learning
-                    and is passionate about solving complex problems and translating advanced technologies into
-                    actionable business
-                    outcomes. Experienced software engineer with deep intuition in algorithms and architectures, skilled
-                    at building
-                    large-scale systems. Combines hands-on technical expertise with research and leadership experience
-                    from both industry
-                    and academia. Known for strong analytical abilities, effective communication, and a collaborative,
-                    problem-solving
-                    approach. Fast learner with a positive attitude and a strategic mindset.
-                </p>
+    <header class="hero">
+        <h1>Lachezar Bozhkov</h1>
+        <p class="role">Head of AI · PhD in Machine Learning</p>
+        <p class="tagline">Built and scaled Dext's document AI from 200K documents a year to 1.5M a day, and led its move to production LLM systems.</p>
+        <ul class="meta">
+            <li>Sofia, Bulgaria · EU timezone · remote-ready</li>
+            <li><a href="https://www.linkedin.com/in/lachezarbozhkov/" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/lachezarbozhkov" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://scholar.google.com/citations?user=LmKnywYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+            <li id="email-slot"><button type="button" id="email-btn">Show email</button><span id="email-print">lachezarbozhkov.github.io</span></li>
+            <li>Updated October 2026</li>
+        </ul>
+    </header>
+
+    <section class="summary" id="summary">
+        <h2>Summary</h2>
+        <p>I build document-AI systems that run at scale. Over ten years at Dext I took machine-learning extraction from 200K documents a year to 1.5M a day, built the ML team, and since 2023 have led the shift to production LLM systems hands-on: multi-provider routing and failover, self-checking model cascades, and evaluation that holds up under audit. PhD in machine learning, 12 peer-reviewed papers, 249 citations. Open to leadership and hands-on principal roles that put AI to work on real business problems, whether in fintech, document automation or a new domain.</p>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+
+        <article class="entry">
+            <div class="entry-head">
+                <h3>Dext <span>· Head of AI, hands-on technical lead</span></h3>
+                <time>2023 – present</time>
             </div>
-        </div>
+            <p class="lead">In 2023 I went back to hands-on engineering to lead Dext's move to LLM-based extraction. I work with a small senior team and designed and built most of the production LLM platform myself.</p>
+            <ul>
+                <li>Automation gains across all extraction flows worth millions of pounds a year in avoided manual review, and the lever that let operations scale without matching headcount. Wrote the briefs operations used to plan vendor ramp-down.</li>
+                <li>Designed and built the LLM extraction platform behind eight production flows: one gateway over Azure OpenAI, Vertex AI Gemini and AWS Bedrock Claude, a declarative model registry, weighted routing, cross-provider failover and request deadlines. Request errors fell from 6.6% to 1.3%, and a new model or provider is a configuration change.</li>
+                <li>Took bank-statement extraction from research to production in four weeks, then raised reconciliation from 84% to 94% (98.8% on the automatic channel) with a reconciliation-gated model cascade and arithmetic post-processing, cutting cost per statement by 42% and median latency by 56%. 79% of reviewed statements no longer need a human.</li>
+                <li>Internationalised line-item extraction from a French-only flow to eight markets: document-perfect rate 62–77% → 85–89% at 23–35% lower cost, confirmed with paired statistical tests and a live A/B before rollout.</li>
+                <li>Evaluation and production ownership end to end: DVC-tracked benchmarks of thousands of labelled documents, offline replay of any cascade policy in seconds, 12+ models benchmarked across three providers, typed structured output with automatic repair, Prometheus and Grafana dashboards for cost and failover, gradual rollouts with pause criteria, EU data-residency routing.</li>
+            </ul>
+            <p class="stack">Python, PyTorch, FastAPI, OpenAI, Gemini, Claude, DVC, Prometheus, Grafana, AWS, Postgres</p>
+        </article>
 
-        <div class="w3-card-2 w3-margin" id="experience">
-            <header class="w3-container w3-signal-orange">
-                <h2 style="text-transform: uppercase"> <i class="fa fa-suitcase w3-margin-right" aria-hidden="true"></i>
-                    Experience </h2>
-            </header>
-            <div class="w3-container">
-                <ul class="w3-ul">
-                    <li>
-                        <header class="flex-container">
-                            <h5 class="w3-opacity">Dext | Head of Machine Learning</h5>
-                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2016 - <span
-                                    class="w3-tag w3-teal w3-round">Current</span></h6>
-                        </header>
-                        <ul>
-                            <li>Oversaw and directed the ML initiatives, scaling operations from processing 200K
-                                documents annually to over 1.5M per day.</li>
-                            <li>Led the development and deployment of industry-leading ML-powered data extraction
-                                systems.</li>
-                            <li>Recruited and built a high-performing ML team, driving a culture of innovation and
-                                excellence.</li>
-                            <li><b>Technologies:</b> Python, PyTorch, TensorFlow, Scikit-learn, AWS.</li>
-
-                        </ul>
-                    </li>
-
-                    <li>
-                        <header class="flex-container">
-                            <h5 class="w3-opacity">Hyperscience | Senior Machine Learning Engineer</h5>
-                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2015 -
-                                2016
-                            </h6>
-
-                        </header>
-                        <ul>
-                            <li>Developed AI solutions including an Explicit Content Detector for a major online
-                                platform and an anomaly detection system for Salesforce.</li>
-                            <li>Contributed to the design of the "Automatic Data Scientist" product, enhancing data
-                                analysis automation</li>
-                            <li><b>Technologies:</b> Python, Chainer, TensorFlow, Scikit-learn, HyperOpt, MongoDB,
-                                Elastic Search, AWS</li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <header class="flex-container">
-                            <h5 class="w3-opacity">University of Aveiro, TU-Sofia | Ph.D. Student</h5>
-                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2014 -
-                                2017
-                            </h6>
-                        </header>
-
-                        <ul>
-                            <li>Conducted cutting-edge research in Brain-Computer Interfaces using EEG and ML, resulting
-                                in multiple publications and conference presentations</li>
-                            <li>Teaching Assistant for Machine Learning courses, mentoring students and leading
-                                workshops</li>
-                            <li><b>Technologies:</b> Matlab, Python, EEGLab, Signal Processing</li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <header class="flex-container">
-                            <h5 class="w3-opacity">Vienna Insurance Group | Senior Software Engineer</h5>
-                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2012 -
-                                2015
-                            </h6>
-                        </header>
-                        <ul>
-                            <li>Designed and implemented a large-scale data warehouse and ETL processes for Vienna
-                                Insurance Group</li>
-                            <li><b>Technologies:</b> C#, .NET, MS SQL Server, JavaScript, JQuery.</li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <header class="flex-container">
-                            <h5 class="w3-opacity">Easy Asset Management | Software Development Manager
-                            </h5>
-                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2009 -
-                                2012
-                            </h6>
-                        </header>
-                        <ul>
-                            <li>Promoted to Software Development Manager after 6 months, leading a team in developing an
-                                internal ERP system, significantly enhancing operational efficiency</li>
-                            <li><b>Technologies:</b> C#, .NET, MS SQL Server, JavaScript</li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <header class="flex-container">
-                            <h5 class="w3-opacity">Other Projects
-                            </h5>
-                            <div></div>
-                        </header>
-                        <ul>
-                            <li>
-                                2021 | BoneX | Interim CTO |
-                                Served as Interim CTO for six months, leading the design of the company’s product
-                                roadmap,
-                                recruiting the technology
-                                team, and establishing development processes and standards. Successfully launched the
-                                MVP,
-                                hired a permanent CTO, and
-                                deployed several AI models.
-                            </li>
-
-                            <li>
-                                2017-2019 | Faculty of Mathematics and Informatics, Sofia University | Lecturer
-                                Taught "Applied Machine Learning with Python." Developed and delivered course materials
-                                available at GitHub
-                            </li>
-                            <li>
-                                2010 |
-                                QuickStart Global | .NET Developer |
-                                Refactored and rewrote the website findababysitter.com utilizing C#, ASP.NET MVC2, .NET,
-                                MS SQL Server, MySQL, HTML, and CSS
-                            </li>
-                            <li>
-                                2009 | Erasmus Student Mobility Program, Beja University, Portugal | TU Sofia - Final
-                                Project
-                                Developed the Client Orders and Protocols Management System for Krakrasoft. Utilized
-                                UML,
-                                C#, .NET, MS Project, and
-                                Visual Paradigm.
-
-                            </li>
-                            <li>
-                                2009 | Erasmus Internship | Coca-Cola Bottling Co., Dublin, Ireland
-                                Completed an internship as a Network Administrator and Support Specialist
-                            </li>
-                            <li>2006 - 2008 | National Academy for Software Development (NASD) | Trainer & Software
-                                Developer
-                                Conducted various .NET courses and contributed to software development projects.
-                                Co-authored
-                                "Introduction to
-                                Programming with Java," a student textbook in Bulgarian (ISBN 978-954-400-055-4)
-                            </li>
-                            <li>
-                                2000 - 2006 | Krakrasoft | Apprentice & Intern |
-                                Gained experience through summer internships, working with DOS commands, Windows
-                                installations, driver troubleshooting,
-                                network configurations, and software development
-                            </li>
-                            <li>
-                                Speaker | Presented at various industry conferences, meetups, and events
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+        <article class="entry">
+            <div class="entry-head">
+                <h3>Dext <span>· Head of Machine Learning</span></h3>
+                <time>2016 – 2023</time>
             </div>
-        </div>
+            <ul>
+                <li>Built and led the ML team, 10+ engineers at peak: hiring, mentoring, and the research-to-production practices the team still uses.</li>
+                <li>Scaled extraction from 200K documents a year to 1.5M a day while the product grew from Receipt Bank into Dext.</li>
+                <li>Delivered the per-field extraction models for totals, dates, currencies, invoice numbers, payment references and suppliers that replaced third-party extraction, using classical ML and Transformer models on OCR text.</li>
+                <li>Led bank-statement extraction (2021) and the auto-categorisation work: suspicious-item detection and cold-start category ranking.</li>
+            </ul>
+            <p class="stack">Python, PyTorch, TensorFlow, scikit-learn, XGBoost, DVC, AWS</p>
+        </article>
 
-        <div class="w3-card-2 w3-margin" id="publications" style="page-break-inside:avoid;">
-            <header class="w3-container w3-signal-brown flex-container" style="gap:0px;">
-                <h2 style="text-transform: uppercase;"> <i class="fa fa-file-text-o w3-margin-right"
-                        aria-hidden="true"></i>
-                    Publications </h2>
-                <a href="https://scholar.google.com/citations?user=LmKnywYAAAAJ&hl=en" style="text-decoration: none;"
-                    target="_blank"
-                    class="w3-right w3-margin-right">https://scholar.google.com/citations?user=LmKnywYAAAAJ&hl=en</a>
-            </header>
-            <div class="w3-container">
-                <ul class="w3-ul">
-                    <li>
-                        Bozhkov Lachezar, Overview of Deep Learning Architectures for Classifying Brain Signals, KSI
-                        Transactions on Кnowledge
-                        society, ISSN 1313-4787, p59-66, Vol. IX, Number 1, March 2017
-                    </li>
-                    <li>
-                        Lachezar Bozhkov, Petia Koprinkova-Hristova and Petia Georgieva, Reservoir Computing for Emotion
-                        Valence
-                        Discrimination
-                        from EEG signals, Neurocomputing, http://dx.doi.org/10.1016/j.neucom.2016.03.108 (IF 2.392),
-                        March
-                        2017
-                    </li>
-                    <li> Lachezar Bozhkov, Petia Koprinkova-Hristova, Petia Georgieva, Learning to decode human emotions
-                        with
-                        Echo State Networks, Neural Networks Journal, Volume 78, June 2016, Pages 112-119, ISSN
-                        0893-6080,
-                        http://dx.doi.org/10.1016/j.neunet.2015.07.005
-                        (http://www.sciencedirect.com/science/article/pii/S0893608015001422) (IF 3.216)</li>
-                    <li>
-                        L. Bozhkov, P. Georgieva, I. Santos, A. Pereira, C. Silva (2015), EEG-based subject independent
-                        affective computing
-                        models. Procedia Computer Science, Elsevier, pp. 375-382, DOI: 10.1016/j.procs.2015.07.314
-                    </li>
-                    <li>
-                        Lachezar Bozhkov, Petia Georgieva, Brain Neural Data Analysis with Feature Space Defined by
-                        Descriptive
-                        Statistics,
-                        Pattern Recognition and Image Analysis, Volume 9117 of the series Lecture Notes in Computer
-                        Science
-                        pp
-                        415-422,
-                        http://dx.doi.org/10.1007/978-3-319-19390-8_47 (2015)
-                    </li>
-                    <li>
-                        Koprinkova-Hristova, P. and Bozhkov, L. and Georgieva, P. , Echo State Networks for Feature
-                        Selection in
-                        Affective
-                        Computing, Advances in Practical Applications of Agents, Multi-Agent Systems, and
-                        Sustainability:
-                        The
-                        PAAMS Collection,
-                        p.131-141, http://dx.doi.org/10.1007/978-3-319-18944-4_11 (2015)
-                    </li>
-                    <li>
-                        Lachezar Bozhkov, Petia Georgieva, "Classification models of emotional biosignals evoked while
-                        viewing
-                        affective
-                        pictures", 2014 International Conference on Simulation and Modeling Methodologies,
-                        Technologies and
-                        Applications (SIMULTECH) 2014, pp. 601-606.
-                    </li>
-                    <li>
-                        Bozhkov L., P. Georgieva, R. Trifonov, Brain Neural Data Analysis Using Machine Learning Feature
-                        Selection and
-                        Classification Methods, Engineering Applications of Neural Networks, Communications in Computer
-                        and
-                        Information Science
-                        vol 459, pp.123-132, 2014, http://dx.doi.org/10.1007/978-3-319-11071-4_12
-                    </li>
-                    <li>
-                        Nakov S. et al., Student book for programming with Java in Bulgarian. ISBN 978-954-400-055-4,
-                        Chapter:
-                        Operators and
-                        expressions. 2008 http://www.introprogramming.info/intro-java-book/
-                    </li>
-                </ul>
+        <article class="entry">
+            <div class="entry-head">
+                <h3>Hyperscience <span>· Senior Machine Learning Engineer</span></h3>
+                <time>2015 – 2016</time>
             </div>
-        </div>
+            <ul>
+                <li>Built an explicit-content detector for a major online platform and an anomaly-detection system for Salesforce; contributed to the design of the "Automatic Data Scientist" product.</li>
+            </ul>
+            <p class="stack">Python, Chainer, TensorFlow, scikit-learn, HyperOpt, MongoDB, Elasticsearch, AWS</p>
+        </article>
 
-        <div class="w3-card-2 w3-margin" id="education" style="page-break-inside:avoid;">
-            <header class="w3-container w3-signal-violet">
-                <h2 style="text-transform: uppercase"> <i class="fa fa-graduation-cap w3-margin-right"
-                        aria-hidden="true"></i>
-                    Education - Technical University of Sofia </h2>
-            </header>
-            <div class="w3-container">
-                <ul class="w3-ul">
-                    <li>
-                        <header class="flex-container">
-                            <h5 class="w3-opacity">PhD in Machine Learning, Univerisity of Aveiro</h5>
-                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2017
-                            </h6>
-                        </header>
-                        <ul>
-                            <li>
-                                <b>Thesis:</b> Application of machine learning methods for affective computing and
-                                development of noninvasive brain computer interface
-                            </li>
-                            <li>
-                                <b>Advisor:</b>
-                                Prof. Petia Georgieva, University
-                                of Aveiro, Portugal
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <header class="flex-container">
-                            <h5 class="w3-opacity">M. Sc. in Computer Science with honors (in English Language)</h5>
-                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2009 - 2013
-                            </h6>
-                        </header>
-                    </li>
-
-                    <li>
-                        <header class="flex-container">
-                            <h5 class="w3-opacity">B. Sc. in Industrial Engineering with honors (in English Language)
-                            </h5>
-                            <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2005 - 2009
-                            </h6>
-                        </header>
-                    </li>
-                </ul>
+        <article class="entry">
+            <div class="entry-head">
+                <h3>Vienna Insurance Group <span>· Senior Software Engineer</span></h3>
+                <time>2012 – 2015</time>
             </div>
-        </div>
+            <ul>
+                <li>Designed and implemented a large-scale data warehouse and its ETL processes. C#, .NET, MS SQL Server.</li>
+            </ul>
+        </article>
 
-
-
-        <!-- Skills -->
-        <div class="w3-card-2 w3-margin" id="skills" style="page-break-inside:avoid;">
-            <header class="w3-container w3-signal-yellow">
-                <h2 style="text-transform: uppercase;">
-                    <i class="fa fa-asterisk fa-fw w3-margin-right"></i> Skills
-                </h2>
-            </header>
-            <div class="section-content skills-grid">
-                <div>
-                    <ul>
-                        <li><strong>Leadership & Team Management</strong></li>
-                        <li><strong>Strategic Planning</strong></li>
-                        <li><strong>Cross-Functional Collaboration</strong></li>
-                        <li><strong>Project Management</strong></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><strong>System Architecture Design</strong></li>
-                        <li><strong>Software Engineering</strong></li>
-                        <li><strong>Machine Learning & Data Science</strong></li>
-                        <li><strong>Innovation & Research</strong></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul>
-                        <li><strong>Analytical Thinking</strong></li>
-                        <li><strong>Technical and Non-Technical Communication</strong></li>
-                        <li><strong>Adaptability and Continuous Learning</strong></li>
-                        <li><strong>Results-Oriented</strong></li>
-                    </ul>
-                </div>
+        <article class="entry">
+            <div class="entry-head">
+                <h3>Easy Asset Management <span>· Software Development Manager</span></h3>
+                <time>2009 – 2012</time>
             </div>
-        </div>
+            <ul>
+                <li>Promoted to manager after six months; led the team building the company's internal ERP system. C#, .NET, MS SQL Server.</li>
+            </ul>
+        </article>
+    </section>
 
+    <section id="advisory" class="compact">
+        <h2>Advisory, teaching and community</h2>
 
-
-        <div class="w3-card-2 w3-margin" id="technologies" style="page-break-inside:avoid;">
-            <header class="w3-container w3-signal-green">
-                <h2 style="text-transform: uppercase;">
-                    <i class="fa fa-cogs w3-margin-right"></i> Technologies
-                </h2>
-            </header>
-            <div class="grid-container">
-                <div>Languages</div>
-                <div>Python, C#, C/C++, Java, SQL, Matlab, R, JavaScript, HTML, CSS, UML</div>
-                <div>Cloud Providers</div>
-                <div>AWS, GCP, Azure, OCI</div>
-                <div>Machine Learning Frameworks</div>
-                <div>PyTorch, HuggingFace, LightningAI, PEFT, scikit-learn, pandas, numpy, matplotlib, seaborn, plotly,
-                    Tensorflow, keras, DVC, LLM APIs & Prompt Engineering </div>
-                <div>Neural Network Architectures</div>
-                <div>FFN, CNN, RNN, Autoencoders, Attention, Transformers, LLM, GAN, Stable
-                    Diffusion
-                </div>
-                <div>Web programming</div>
-                <div>Flask, ASP.NET, MVC, Forms, SPA, HTML 5, CSS 3, JavaScript, JQuery</div>
-                <div>Internet protocols </div>
-                <div>TCP/IP, UDP, HTTP, SMTP, POP3, FTP, WCF, JSON, REST API, Socket programming, WebSockets, JSON
-                </div>
-                <div>Database Technologies</div>
-                <div>
-                    SQL, MongoDB, ORM, SQLAlchemy, Entity Framework,
-                    Database Design,
-                    (E/R diagrams), Query
-                    Analyzer &
-                    Profilers, OLTP, OLAP, ETL, Data Warehouse</div>
-                <div>Microsoft Technologies</div>
-                <div>
-                    Azure, .NET Framework, C#, ADO.NET, Windows Forms, ASP.NET, MVC,
-                    XML Web services, WCF, AJAX, LINQ, Entity Framework, T-SQL</div>
-                <div>Distributed applications </div>
-                <div>REST API, FAST API, Web services (SOAP, WSDL), WCF</div>
-                <div>Paradigms</div>
-                <div>Object-oriented, functional and procedural programming and modelling, UML. Multithreading and
-                    asynchronous execution,
-                    Parallel technologies, Web programming,
-                    Networking. Distributed systems and multi-tier architectures, Client-server technologies. Software
-                    engineering, Team working, Project Management. High-quality
-                    programming code. Agile methodologies, CI/CD, DevOps,
-                    MLOps.
-                    Data structures, Algorithms, Clean Code, Design
-                    patterns.</div>
-                <div>Development Tools</div>
-                <div>VS Code, Vim, Copilot, Google Colab, Jupyter Lab, Streamlit, Git
-                </div>
+        <article class="entry">
+            <div class="entry-head">
+                <h3>Bitval <span>· Fractional CTO, alongside Dext</span></h3>
+                <time>Oct 2025 – Feb 2026</time>
             </div>
-        </div>
-    </div>
-    <script async data-id="101463882" src="//static.getclicky.com/js"></script>
+            <p>Crypto spot and futures trading platform. Set up the engineering organisation from scratch (coding standards, pull-request review, CI, observability and monitoring) and hired 10+ engineers. Designed the core trading architecture: custody and key security, the order-matching engine and market infrastructure, and blockchain integration with liquidity providers. Treated VARA and MiCA compliance as an engineering requirement, designing the system and business processes to be auditable. Managed stakeholders and external partners.</p>
+        </article>
+
+        <article class="entry">
+            <div class="entry-head">
+                <h3>BoneX <span>· Interim CTO</span></h3>
+                <time>2021, six months</time>
+            </div>
+            <p>Set the product roadmap, hired the technology team, established development processes, launched the MVP and deployed several AI models, then hired a permanent CTO.</p>
+        </article>
+
+        <article class="entry">
+            <div class="entry-head">
+                <h3>Sofia University, Faculty of Mathematics and Informatics <span>· Lecturer</span></h3>
+                <time>2017 – 2019</time>
+            </div>
+            <p>Taught "Applied Machine Learning with Python". Course materials on <a href="https://github.com/fmi/machine-learning-lectures" target="_blank" rel="noopener">GitHub</a>.</p>
+        </article>
+
+        <article class="entry">
+            <div class="entry-head">
+                <h3>Talks and mentoring</h3>
+            </div>
+            <p>Conference presentations at IEEE WCCI/IJCNN 2018 (Rio de Janeiro), INNS Big Data 2015 (San Francisco), IbPRIA 2015 (Santiago de Compostela), PAAMS 2015 (Salamanca), EANN 2014 (Sofia) and SIMULTECH 2014 (Vienna). Speaker and mentor at the Data Science Society Datathon 2017. Mentor for the Udacity Self-Driving Car Nanodegree.</p>
+        </article>
+
+        <article class="entry">
+            <div class="entry-head">
+                <h3>Textbook</h3>
+                <time>2008</time>
+            </div>
+            <p>Co-author of "Introduction to Programming with Java", a Bulgarian student textbook (ISBN 978-954-400-055-4).</p>
+        </article>
+    </section>
+
+    <section id="publications">
+        <h2>Publications <a class="section-link" href="https://scholar.google.com/citations?user=LmKnywYAAAAJ&amp;hl=en" target="_blank" rel="noopener">249 citations · Google Scholar</a></h2>
+        <ol class="pubs">
+            <li>Bozhkov L., Koprinkova-Hristova P., Georgieva P. <em>Learning to decode human emotions with Echo State Networks.</em> Neural Networks, vol. 78, pp. 112–119, 2016. <a href="https://doi.org/10.1016/j.neunet.2015.07.005" target="_blank" rel="noopener">doi</a> <span class="cites">· 70 citations</span></li>
+            <li>Bozhkov L., Koprinkova-Hristova P., Georgieva P. <em>Reservoir computing for emotion valence discrimination from EEG signals.</em> Neurocomputing, vol. 231, pp. 28–40, 2017. <a href="https://doi.org/10.1016/j.neucom.2016.03.108" target="_blank" rel="noopener">doi</a> <span class="cites">· 54 citations</span></li>
+            <li>Bozhkov L., Georgieva P. <em>Overview of deep learning architectures for EEG-based brain imaging.</em> International Joint Conference on Neural Networks (IJCNN), 2018. <span class="cites">· 38 citations</span></li>
+            <li>Bozhkov L., Georgieva P. <em>Deep learning models for brain machine interfaces.</em> Annals of Mathematics and Artificial Intelligence, vol. 88, pp. 1175–1190, 2020. <span class="cites">· 16 citations</span></li>
+        </ol>
+        <p class="pubs-note">Six further peer-reviewed papers (2014–2017) on EEG-based affective computing and brain-computer interfaces, at INNS Big Data, IbPRIA, PAAMS, EANN, SIMULTECH and in KSI Transactions on Knowledge Society.</p>
+    </section>
+
+    <section id="education" class="compact">
+        <h2>Education</h2>
+
+        <article class="entry">
+            <div class="entry-head">
+                <h3>PhD in Machine Learning <span>· University of Aveiro, Portugal, with the Technical University of Sofia</span></h3>
+                <time>2013 – 2017</time>
+            </div>
+            <p>Thesis: application of machine learning methods for affective computing and development of a non-invasive brain-computer interface. Advisor: Prof. Petia Georgieva. Teaching assistant for machine-learning courses.</p>
+        </article>
+
+        <article class="entry">
+            <div class="entry-head">
+                <h3>MSc in Computer Science, with honours <span>· Technical University of Sofia, English-language programme</span></h3>
+                <time>2009 – 2013</time>
+            </div>
+        </article>
+
+        <article class="entry">
+            <div class="entry-head">
+                <h3>BSc in Industrial Engineering, with honours <span>· Technical University of Sofia, English-language programme</span></h3>
+                <time>2005 – 2009</time>
+            </div>
+        </article>
+    </section>
+
+    <section id="capabilities">
+        <h2>Capabilities</h2>
+        <ul class="caps">
+            <li><strong>Production LLM systems.</strong> Prompt design, structured output, tool use, model selection, routing and fallback, cost and latency trade-offs.</li>
+            <li><strong>Evaluation of non-deterministic systems.</strong> Dataset construction, metric choice, error analysis, regression suites for models and prompts, paired statistical tests.</li>
+            <li><strong>ML fundamentals and breadth.</strong> Classical ML through Transformers; rigorous experimental design.</li>
+            <li><strong>Notebook to production.</strong> FastAPI services, latency and cost budgets, monitoring, gradual rollouts, drift.</li>
+            <li><strong>MLOps.</strong> DVC-tracked datasets and experiments, model registry, CI for models and prompts, reproducible evaluation.</li>
+            <li><strong>AI leadership.</strong> Team building, research-to-product, model and vendor cost strategy, briefs that business teams can act on.</li>
+        </ul>
+    </section>
+
+    <section id="stack">
+        <h2>Technology stack</h2>
+        <dl class="stack-grid">
+            <dt>Machine learning</dt><dd>Python, PyTorch, HuggingFace, scikit-learn, XGBoost / LightGBM, pandas, NumPy</dd>
+            <dt>LLM providers</dt><dd>OpenAI and Azure OpenAI, Gemini on Vertex AI, Claude on AWS Bedrock; structured outputs and tool calling</dd>
+            <dt>Serving and infra</dt><dd>FastAPI, Docker, AWS, Postgres, MongoDB, Redis</dd>
+            <dt>Evaluation and observability</dt><dd>DVC, pytest, Prometheus, Grafana, Honeybadger</dd>
+            <dt>Tooling</dt><dd>Git and GitHub, Claude Code and agentic workflows, Jupyter, VS Code</dd>
+            <dt>Earlier career</dt><dd class="muted">C# / .NET, MS SQL Server, data warehousing and ETL</dd>
+        </dl>
+    </section>
+
+    <footer>
+        Lachezar Bozhkov · <a href="https://lachezarbozhkov.github.io/">lachezarbozhkov.github.io</a> · updated October 2026
+    </footer>
+
+</main>
+</div>
+
+<script>
+    (function () {
+        var btn = document.getElementById('email-btn');
+        if (!btn) return;
+        btn.addEventListener('click', function () {
+            var u = [108,97,99,104,101,122,97,114,46,98,111,122,104,107,111,118];
+            var d = [103,109,97,105,108,46,99,111,109];
+            var s = String.fromCharCode.apply(null, u) + '@' + String.fromCharCode.apply(null, d);
+            var a = document.createElement('a');
+            a.href = 'mailto:' + s;
+            a.textContent = s;
+            btn.replaceWith(a);
+        });
+    })();
+</script>
+<script async data-id="101463882" src="//static.getclicky.com/js"></script>
 </body>
-
 </html>
